@@ -1,0 +1,110 @@
+/* ===== RF1 Consig - Custom Styles ===== */
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===== Navbar transitions ===== */
+#navbar-bg.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+#navbar-bg.scrolled .nav-link {
+  color: #475569;
+}
+#navbar-bg.scrolled .nav-link:hover {
+  color: #059669;
+  background: #ecfdf5;
+}
+#navbar-bg.scrolled .nav-link-active {
+  color: #059669 !important;
+  font-weight: 600;
+}
+
+#navbar-bg.scrolled #mobile-toggle {
+  color: #1e293b;
+}
+
+/* ===== Hero rotating words animation ===== */
+.rotating-word {
+  animation: fadeSlide 0.5s ease;
+}
+
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Features hidden toggle ===== */
+.feature-hidden {
+  display: none;
+}
+
+/* ===== Hover effects for principle items ===== */
+.principle-item:hover .principle-icon {
+  background: #059669 !important;
+}
+
+/* ===== Card hover lift ===== */
+.feature-card:hover {
+  transform: translateY(-4px);
+}
+
+/* ===== Mobile menu animation ===== */
+#mobile-menu {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+#mobile-menu.hidden {
+  display: none;
+}
+#mobile-menu.visible {
+  display: block;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Focus ring color ===== */
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(5, 150, 105, 0.3);
+  border-color: #059669 !important;
+}
+
+/* ===== Button hover shadow ===== */
+button[type="submit"]:hover {
+  box-shadow: 0 10px 40px rgba(5, 150, 105, 0.25);
+}
+
+/* ===== Process section card hover ===== */
+.process-card:hover {
+  border-color: rgba(52, 211, 153, 0.30) !important;
+}
+
+/* ===== Scroll-triggered fade-in fallback ===== */
+[data-aos] {
+  pointer-events: none;
+}
+[data-aos].aos-animate {
+  pointer-events: auto;
+}
+
+/* ===== Responsive nav link active state ===== */
+.nav-link:focus-visible {
+  outline: 2px solid #059669;
+  outline-offset: 2px;
+}
+
+/* ===== Gradient text fix for Safari ===== */
+.gradient-text {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

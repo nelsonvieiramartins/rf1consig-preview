@@ -1,0 +1,423 @@
+
+Notice: session_start(): Ignoring session_start() because a session is already active in C:\wamp64\www\rf1consig\principios.php on line 5
+
+Call Stack:
+    0.0013     504912   1. {main}() C:\wamp64\www\rf1consig\export-html.php:0
+    1.0249     689568   2. include('C:\wamp64\www\rf1consig\principios.php') C:\wamp64\www\rf1consig\export-html.php:47
+    1.0249     689568   3. session_start() C:\wamp64\www\rf1consig\principios.php:5
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RF1 Consig - Princípios</title>
+  <meta name="description" content="RF1 Consig é especialista na gestão de margens consignáveis para órgãos públicos e empresas privadas. Tecnologia e experiência a seu favor." />
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#0A1128',
+            emerald: {
+              50:  '#ecfdf5',
+              100: '#d1fae5',
+              400: '#34d399',
+              500: '#10b981',
+              600: '#059669',
+              700: '#047857',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- AOS (Animate On Scroll) -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="font-sans bg-white text-slate-800 antialiased">
+<!-- ===== NAVBAR ===== -->
+<div id="navbar-wrapper" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500" data-has-hero="false">
+  <div id="navbar-bg" class="transition-all duration-500 scrolled">
+
+    <!-- Info bar (telefone / email) — visível apenas com hero -->
+    <div id="info-bar" class="transition-all duration-500 overflow-hidden max-h-0 opacity-0">
+      <div class="max-w-7xl mx-auto px-6 py-2 flex justify-between items-center">
+        <div class="flex items-center gap-6 text-sm">
+          <a href="tel:+5591986192525" class="flex items-center gap-2 text-white/80 hover:text-white transition-colors">
+            <svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12 19.79 19.79 0 0 1 1.08 3.4A2 2 0 0 1 3.06 1.2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>+55 (91) 98619-2525</span>
+          </a>
+          <a href="mailto:suporte@rf1consig.com.br" class="hidden sm:flex items-center gap-2 text-white/80 hover:text-white transition-colors">
+            <svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>suporte@rf1consig.com.br</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main nav -->
+    <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+      <a href="index.html">
+        <img
+          id="navbar-logo"
+          src="https://rf1consig.com.br/wp-content/uploads/2024/05/Logo-RF1-Consig-Horizontal.png"
+          alt="RF1 Consig"
+          class="transition-all duration-500 h-12"
+          style="height:40px;"
+        />
+      </a>
+
+      <!-- Desktop links (xl+) -->
+            <nav class="hidden xl:flex items-center gap-0.5">
+                <a
+          href="index.html"
+          class="nav-link px-3 py-2 rounded-full text-sm font-medium transition-all duration-300 text-white/80 hover:text-white hover:bg-white/10"
+        >Home</a>
+                <a
+          href="quem-somos.html"
+          class="nav-link px-3 py-2 rounded-full text-sm font-medium transition-all duration-300 text-white/80 hover:text-white hover:bg-white/10"
+        >Quem Somos</a>
+                <a
+          href="solucoes.html"
+          class="nav-link px-3 py-2 rounded-full text-sm font-medium transition-all duration-300 text-white/80 hover:text-white hover:bg-white/10"
+        >Soluções</a>
+                <a
+          href="faq.html"
+          class="nav-link px-3 py-2 rounded-full text-sm font-medium transition-all duration-300 text-white/80 hover:text-white hover:bg-white/10"
+        >FAQ</a>
+                <a
+          href="principios.html"
+          class="nav-link nav-link-active px-3 py-2 rounded-full text-sm font-medium transition-all duration-300 text-emerald-400 font-semibold"
+        >Princípios</a>
+                <a
+          href="funcionalidades.html"
+          class="nav-link px-3 py-2 rounded-full text-sm font-medium transition-all duration-300 text-white/80 hover:text-white hover:bg-white/10"
+        >Funcionalidades</a>
+                <a
+          href="contato.html"
+          class="nav-link px-3 py-2 rounded-full text-sm font-medium transition-all duration-300 text-white/80 hover:text-white hover:bg-white/10"
+        >Contato</a>
+              </nav>
+
+      <!-- Mobile toggle -->
+      <button id="mobile-toggle" onclick="toggleMobileMenu()" class="xl:hidden p-2 rounded-xl transition-colors text-slate-800">
+        <svg id="menu-icon-open" class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg id="menu-icon-close" class="w-6 h-6 hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Mobile menu overlay -->
+<div id="mobile-menu" class="fixed inset-0 z-40 bg-white pt-24 px-6 hidden">
+  <nav class="flex flex-col gap-1">
+        <a
+      href="index.html"
+      class="text-left text-lg font-medium py-3 border-b border-slate-100 transition-colors text-slate-700 hover:text-emerald-600"
+    >Home</a>
+        <a
+      href="quem-somos.html"
+      class="text-left text-lg font-medium py-3 border-b border-slate-100 transition-colors text-slate-700 hover:text-emerald-600"
+    >Quem Somos</a>
+        <a
+      href="solucoes.html"
+      class="text-left text-lg font-medium py-3 border-b border-slate-100 transition-colors text-slate-700 hover:text-emerald-600"
+    >Soluções</a>
+        <a
+      href="faq.html"
+      class="text-left text-lg font-medium py-3 border-b border-slate-100 transition-colors text-slate-700 hover:text-emerald-600"
+    >FAQ</a>
+        <a
+      href="principios.html"
+      class="text-left text-lg font-medium py-3 border-b border-slate-100 transition-colors text-emerald-600 font-semibold"
+    >Princípios</a>
+        <a
+      href="funcionalidades.html"
+      class="text-left text-lg font-medium py-3 border-b border-slate-100 transition-colors text-slate-700 hover:text-emerald-600"
+    >Funcionalidades</a>
+        <a
+      href="contato.html"
+      class="text-left text-lg font-medium py-3 border-b border-slate-100 transition-colors text-slate-700 hover:text-emerald-600"
+    >Contato</a>
+      </nav>
+</div>
+
+<main class="pt-20">
+  <!-- ===== PADRÃO RF1 DE GOVERNANÇA SECTION ===== -->
+<section id="governanca" class="relative py-24 lg:py-32 overflow-hidden" style="background:#0A1128;">
+  <div class="absolute top-0 right-0 w-96 h-96 rounded-full" style="background:rgba(16,185,129,0.05); filter:blur(80px);"></div>
+  <div class="absolute bottom-0 left-0 w-72 h-72 rounded-full" style="background:rgba(16,185,129,0.05); filter:blur(80px);"></div>
+
+  <div class="relative max-w-7xl mx-auto px-6">
+
+    <div data-aos="fade-up" data-aos-duration="600" class="text-center mb-16">
+      <span class="inline-block text-emerald-400 font-semibold text-sm tracking-widest uppercase mb-4">
+        Nossa Arma Secreta
+      </span>
+      <h2 class="text-4xl lg:text-5xl font-extrabold text-white mb-4">
+        O Padrão RF1<br />
+        <span class="text-emerald-400">de Governança</span>
+      </h2>
+      <p class="text-xl max-w-2xl mx-auto" style="color:rgba(255,255,255,0.55);">
+        Cinco pilares que guiam cada decisão técnica e operacional da RF1 Consig.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+
+            <div data-aos="fade-up" data-aos-delay="0" data-aos-duration="600"
+        class="process-card rounded-2xl p-6 text-center transition-all duration-300"
+        style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.10);">
+        <div class="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-5" style="background:rgba(16,185,129,0.12);">
+          <svg class="w-7 h-7 text-emerald-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><polyline points="9 15 11 17 15 13"/></svg>
+        </div>
+        <h3 class="text-lg font-bold text-white mb-3">Legalidade</h3>
+        <p class="text-sm leading-relaxed" style="color:rgba(255,255,255,0.55);">Todas as operações em estrita conformidade com a legislação vigente e as normas do órgão.</p>
+      </div>
+            <div data-aos="fade-up" data-aos-delay="80" data-aos-duration="600"
+        class="process-card rounded-2xl p-6 text-center transition-all duration-300"
+        style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.10);">
+        <div class="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-5" style="background:rgba(16,185,129,0.12);">
+          <svg class="w-7 h-7 text-emerald-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <h3 class="text-lg font-bold text-white mb-3">Transparência</h3>
+        <p class="text-sm leading-relaxed" style="color:rgba(255,255,255,0.55);">Processos auditáveis e rastreáveis. Cada operação gera registro completo e consultável.</p>
+      </div>
+            <div data-aos="fade-up" data-aos-delay="160" data-aos-duration="600"
+        class="process-card rounded-2xl p-6 text-center transition-all duration-300"
+        style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.10);">
+        <div class="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-5" style="background:rgba(16,185,129,0.12);">
+          <svg class="w-7 h-7 text-emerald-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/></svg>
+        </div>
+        <h3 class="text-lg font-bold text-white mb-3">Eficiência</h3>
+        <p class="text-sm leading-relaxed" style="color:rgba(255,255,255,0.55);">Otimização contínua de recursos, tempo e processos. Menos retrabalho, mais resultado.</p>
+      </div>
+            <div data-aos="fade-up" data-aos-delay="240" data-aos-duration="600"
+        class="process-card rounded-2xl p-6 text-center transition-all duration-300"
+        style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.10);">
+        <div class="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-5" style="background:rgba(16,185,129,0.12);">
+          <svg class="w-7 h-7 text-emerald-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3 class="text-lg font-bold text-white mb-3">Segurança</h3>
+        <p class="text-sm leading-relaxed" style="color:rgba(255,255,255,0.55);">Proteção de dados sensíveis com criptografia, controles de acesso e monitoramento contínuo.</p>
+      </div>
+            <div data-aos="fade-up" data-aos-delay="320" data-aos-duration="600"
+        class="process-card rounded-2xl p-6 text-center transition-all duration-300"
+        style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.10);">
+        <div class="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-5" style="background:rgba(16,185,129,0.12);">
+          <svg class="w-7 h-7 text-emerald-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3 class="text-lg font-bold text-white mb-3">Compromisso Público</h3>
+        <p class="text-sm leading-relaxed" style="color:rgba(255,255,255,0.55);">Foco no interesse do servidor e do órgão. A tecnologia existe para servir às pessoas.</p>
+      </div>
+      
+    </div>
+  </div>
+</section>
+  <!-- ===== ENGENHARIA DE SOFTWARE ROBUSTA SECTION ===== -->
+<section id="engenharia" class="relative py-24 lg:py-32 bg-white overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+
+      <!-- Content -->
+      <div data-aos="fade-right" data-aos-duration="800">
+        <span class="inline-block text-emerald-600 font-semibold text-sm tracking-widest uppercase mb-4">
+          Qualidade Técnica
+        </span>
+        <h2 class="text-4xl lg:text-5xl font-extrabold leading-tight mb-6" style="color:#0A1128;">
+          Engenharia de<br />
+          <span class="text-emerald-600">software robusta</span>
+        </h2>
+        <p class="text-lg text-slate-600 leading-relaxed mb-10">
+          Os princípios que norteiam nossas ações, observados diariamente na relação com nossos clientes e como pilares no desenvolvimento do RF1 Consig.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div data-aos="fade-up" data-aos-delay="0" class="principle-item flex items-center gap-4 p-4 rounded-xl hover:bg-emerald-50/50 transition-colors group">
+            <div class="principle-icon flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center transition-colors" style="background:#0A1128;">
+              <svg class="w-5 h-5 text-emerald-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+            </div>
+            <span class="text-base font-medium text-slate-700">Adequação funcional</span>
+          </div>
+                    <div data-aos="fade-up" data-aos-delay="70" class="principle-item flex items-center gap-4 p-4 rounded-xl hover:bg-emerald-50/50 transition-colors group">
+            <div class="principle-icon flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center transition-colors" style="background:#0A1128;">
+              <svg class="w-5 h-5 text-emerald-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+            </div>
+            <span class="text-base font-medium text-slate-700">Eficiência de desempenho</span>
+          </div>
+                    <div data-aos="fade-up" data-aos-delay="140" class="principle-item flex items-center gap-4 p-4 rounded-xl hover:bg-emerald-50/50 transition-colors group">
+            <div class="principle-icon flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center transition-colors" style="background:#0A1128;">
+              <svg class="w-5 h-5 text-emerald-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5l6.74-6.76z"/><line x1="16" y1="8" x2="2" y2="22"/><line x1="17.5" y1="15" x2="9" y2="15"/></svg>
+            </div>
+            <span class="text-base font-medium text-slate-700">Compatibilidade</span>
+          </div>
+                    <div data-aos="fade-up" data-aos-delay="210" class="principle-item flex items-center gap-4 p-4 rounded-xl hover:bg-emerald-50/50 transition-colors group">
+            <div class="principle-icon flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center transition-colors" style="background:#0A1128;">
+              <svg class="w-5 h-5 text-emerald-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg>
+            </div>
+            <span class="text-base font-medium text-slate-700">Usabilidade</span>
+          </div>
+                    <div data-aos="fade-up" data-aos-delay="280" class="principle-item flex items-center gap-4 p-4 rounded-xl hover:bg-emerald-50/50 transition-colors group">
+            <div class="principle-icon flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center transition-colors" style="background:#0A1128;">
+              <svg class="w-5 h-5 text-emerald-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+            </div>
+            <span class="text-base font-medium text-slate-700">Confiabilidade</span>
+          </div>
+                    <div data-aos="fade-up" data-aos-delay="350" class="principle-item flex items-center gap-4 p-4 rounded-xl hover:bg-emerald-50/50 transition-colors group">
+            <div class="principle-icon flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center transition-colors" style="background:#0A1128;">
+              <svg class="w-5 h-5 text-emerald-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <span class="text-base font-medium text-slate-700">Segurança</span>
+          </div>
+                    <div data-aos="fade-up" data-aos-delay="420" class="principle-item flex items-center gap-4 p-4 rounded-xl hover:bg-emerald-50/50 transition-colors group sm:col-span-2 lg:col-span-1">
+            <div class="principle-icon flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center transition-colors" style="background:#0A1128;">
+              <svg class="w-5 h-5 text-emerald-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            </div>
+            <span class="text-base font-medium text-slate-700">Capacidade de manutenção</span>
+          </div>
+                  </div>
+      </div>
+
+      <!-- Image -->
+      <div data-aos="fade-left" data-aos-duration="800" class="relative">
+        <div class="relative rounded-3xl overflow-hidden" style="aspect-ratio: 4/3;">
+          <img
+            src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69b1bf307c4997a513bd6510/f34eb0706_generated_7b0a4819.png"
+            alt="Princípios RF1 Consig"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(10,17,40,0.20), transparent)"></div>
+        </div>
+        <div class="absolute -bottom-6 -left-6 w-48 h-48 bg-emerald-500/10 rounded-3xl -z-10"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="relative overflow-hidden" style="background:#0A1128;">
+  <!-- Watermark logo -->
+  <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+    <img
+      src="https://rf1consig.com.br/wp-content/uploads/2024/05/Logo-RF1-Consig-Horizontal.png"
+      alt=""
+      class="w-[600px] brightness-0 invert"
+      style="opacity:0.03;"
+    />
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-6 pt-20 pb-10">
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
+
+      <!-- Brand -->
+      <div class="lg:col-span-1">
+        <img
+          src="https://rf1consig.com.br/wp-content/uploads/2024/05/Logo-RF1-Consig-Horizontal.png"
+          alt="RF1 Consig"
+          class="h-10 brightness-0 invert mb-6"
+        />
+        <p class="leading-relaxed text-sm mb-6" style="color:rgba(255,255,255,0.50);">
+          Fundada por profissionais com experiência no mercado financeiro, a RF1 Consig é especializada na gestão de margens consignáveis para órgãos públicos e empresas privadas.
+        </p>
+        <!-- Social icons -->
+        <div class="flex items-center gap-3">
+          <a href="#INSTAGRAM_URL" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+             class="w-9 h-9 rounded-full flex items-center justify-center transition-colors hover:bg-emerald-600"
+             style="background:rgba(255,255,255,0.08);">
+            <svg class="w-4 h-4 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#FACEBOOK_URL" target="_blank" rel="noopener noreferrer" aria-label="Facebook"
+             class="w-9 h-9 rounded-full flex items-center justify-center transition-colors hover:bg-emerald-600"
+             style="background:rgba(255,255,255,0.08);">
+            <svg class="w-4 h-4 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick links -->
+      <div>
+        <h4 class="text-white font-bold text-sm uppercase tracking-widest mb-6">Navegação</h4>
+        <ul class="space-y-3">
+          <li><a href="index.html"          class="text-sm transition-colors hover:text-emerald-400" style="color:rgba(255,255,255,0.50);">Home</a></li>
+          <li><a href="quem-somos.html"     class="text-sm transition-colors hover:text-emerald-400" style="color:rgba(255,255,255,0.50);">Quem Somos</a></li>
+          <li><a href="solucoes.html"       class="text-sm transition-colors hover:text-emerald-400" style="color:rgba(255,255,255,0.50);">Soluções</a></li>
+          <li><a href="faq.html"            class="text-sm transition-colors hover:text-emerald-400" style="color:rgba(255,255,255,0.50);">FAQ</a></li>
+          <li><a href="principios.html"     class="text-sm transition-colors hover:text-emerald-400" style="color:rgba(255,255,255,0.50);">Princípios</a></li>
+          <li><a href="funcionalidades.html"class="text-sm transition-colors hover:text-emerald-400" style="color:rgba(255,255,255,0.50);">Funcionalidades</a></li>
+          <li><a href="contato.html"        class="text-sm transition-colors hover:text-emerald-400" style="color:rgba(255,255,255,0.50);">Contato</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h4 class="text-white font-bold text-sm uppercase tracking-widest mb-6">Contato</h4>
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12 19.79 19.79 0 0 1 1.08 3.4A2 2 0 0 1 3.06 1.2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <div>
+              <p class="text-sm" style="color:rgba(255,255,255,0.50);">0800 5149 334 (gratuito)</p>
+              <p class="text-sm" style="color:rgba(255,255,255,0.50);">(91) 3122-2238</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <a href="https://wa.me/5591986192525" target="_blank" rel="noopener noreferrer" class="text-sm transition-colors hover:text-emerald-400" style="color:rgba(255,255,255,0.50);">(91) 98619-2525</a>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:suporte@rf1consig.com.br" class="text-sm transition-colors hover:text-emerald-400" style="color:rgba(255,255,255,0.50);">suporte@rf1consig.com.br</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Address -->
+      <div>
+        <h4 class="text-white font-bold text-sm uppercase tracking-widest mb-6">Endereço</h4>
+        <div class="flex items-start gap-3 mb-6">
+          <svg class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <p class="text-sm leading-relaxed" style="color:rgba(255,255,255,0.50);">
+            Tv. Quintino Bocaiúva, 2301 - Sala 901<br />
+            Edif. Rogélio Fernandez Business Center<br />
+            Cremação, CEP 66.045-315<br />
+            Belém/PA
+          </p>
+        </div>
+        <!-- CNPJ -->
+        <p class="text-xs" style="color:rgba(255,255,255,0.30);">
+          CNPJ: #CNPJ_PLACEHOLDER
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Divider + copyright -->
+    <div class="pt-8" style="border-top: 1px solid rgba(255,255,255,0.10);">
+      <p class="text-center text-sm" style="color:rgba(255,255,255,0.30);">
+        Copyright &copy; 2026 - RF1 Consig. Todos direitos reservados.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

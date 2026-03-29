@@ -1,0 +1,593 @@
+
+Notice: session_start(): Ignoring session_start() because a session is already active in C:\wamp64\www\rf1consig\faq.php on line 5
+
+Call Stack:
+    0.0013     504912   1. {main}() C:\wamp64\www\rf1consig\export-html.php:0
+    0.6663     663504   2. include('C:\wamp64\www\rf1consig\faq.php') C:\wamp64\www\rf1consig\export-html.php:47
+    0.6663     663504   3. session_start() C:\wamp64\www\rf1consig\faq.php:5
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RF1 Consig - Central de Ajuda</title>
+  <meta name="description" content="RF1 Consig é especialista na gestão de margens consignáveis para órgãos públicos e empresas privadas. Tecnologia e experiência a seu favor." />
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#0A1128',
+            emerald: {
+              50:  '#ecfdf5',
+              100: '#d1fae5',
+              400: '#34d399',
+              500: '#10b981',
+              600: '#059669',
+              700: '#047857',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- AOS (Animate On Scroll) -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="font-sans bg-white text-slate-800 antialiased">
+<!-- ===== NAVBAR ===== -->
+<div id="navbar-wrapper" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500" data-has-hero="false">
+  <div id="navbar-bg" class="transition-all duration-500 scrolled">
+
+    <!-- Info bar (telefone / email) — visível apenas com hero -->
+    <div id="info-bar" class="transition-all duration-500 overflow-hidden max-h-0 opacity-0">
+      <div class="max-w-7xl mx-auto px-6 py-2 flex justify-between items-center">
+        <div class="flex items-center gap-6 text-sm">
+          <a href="tel:+5591986192525" class="flex items-center gap-2 text-white/80 hover:text-white transition-colors">
+            <svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12 19.79 19.79 0 0 1 1.08 3.4A2 2 0 0 1 3.06 1.2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>+55 (91) 98619-2525</span>
+          </a>
+          <a href="mailto:suporte@rf1consig.com.br" class="hidden sm:flex items-center gap-2 text-white/80 hover:text-white transition-colors">
+            <svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>suporte@rf1consig.com.br</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main nav -->
+    <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+      <a href="index.html">
+        <img
+          id="navbar-logo"
+          src="https://rf1consig.com.br/wp-content/uploads/2024/05/Logo-RF1-Consig-Horizontal.png"
+          alt="RF1 Consig"
+          class="transition-all duration-500 h-12"
+          style="height:40px;"
+        />
+      </a>
+
+      <!-- Desktop links (xl+) -->
+            <nav class="hidden xl:flex items-center gap-0.5">
+                <a
+          href="index.html"
+          class="nav-link px-3 py-2 rounded-full text-sm font-medium transition-all duration-300 text-white/80 hover:text-white hover:bg-white/10"
+        >Home</a>
+                <a
+          href="quem-somos.html"
+          class="nav-link px-3 py-2 rounded-full text-sm font-medium transition-all duration-300 text-white/80 hover:text-white hover:bg-white/10"
+        >Quem Somos</a>
+                <a
+          href="solucoes.html"
+          class="nav-link px-3 py-2 rounded-full text-sm font-medium transition-all duration-300 text-white/80 hover:text-white hover:bg-white/10"
+        >Soluções</a>
+                <a
+          href="faq.html"
+          class="nav-link nav-link-active px-3 py-2 rounded-full text-sm font-medium transition-all duration-300 text-emerald-400 font-semibold"
+        >FAQ</a>
+                <a
+          href="principios.html"
+          class="nav-link px-3 py-2 rounded-full text-sm font-medium transition-all duration-300 text-white/80 hover:text-white hover:bg-white/10"
+        >Princípios</a>
+                <a
+          href="funcionalidades.html"
+          class="nav-link px-3 py-2 rounded-full text-sm font-medium transition-all duration-300 text-white/80 hover:text-white hover:bg-white/10"
+        >Funcionalidades</a>
+                <a
+          href="contato.html"
+          class="nav-link px-3 py-2 rounded-full text-sm font-medium transition-all duration-300 text-white/80 hover:text-white hover:bg-white/10"
+        >Contato</a>
+              </nav>
+
+      <!-- Mobile toggle -->
+      <button id="mobile-toggle" onclick="toggleMobileMenu()" class="xl:hidden p-2 rounded-xl transition-colors text-slate-800">
+        <svg id="menu-icon-open" class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg id="menu-icon-close" class="w-6 h-6 hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Mobile menu overlay -->
+<div id="mobile-menu" class="fixed inset-0 z-40 bg-white pt-24 px-6 hidden">
+  <nav class="flex flex-col gap-1">
+        <a
+      href="index.html"
+      class="text-left text-lg font-medium py-3 border-b border-slate-100 transition-colors text-slate-700 hover:text-emerald-600"
+    >Home</a>
+        <a
+      href="quem-somos.html"
+      class="text-left text-lg font-medium py-3 border-b border-slate-100 transition-colors text-slate-700 hover:text-emerald-600"
+    >Quem Somos</a>
+        <a
+      href="solucoes.html"
+      class="text-left text-lg font-medium py-3 border-b border-slate-100 transition-colors text-slate-700 hover:text-emerald-600"
+    >Soluções</a>
+        <a
+      href="faq.html"
+      class="text-left text-lg font-medium py-3 border-b border-slate-100 transition-colors text-emerald-600 font-semibold"
+    >FAQ</a>
+        <a
+      href="principios.html"
+      class="text-left text-lg font-medium py-3 border-b border-slate-100 transition-colors text-slate-700 hover:text-emerald-600"
+    >Princípios</a>
+        <a
+      href="funcionalidades.html"
+      class="text-left text-lg font-medium py-3 border-b border-slate-100 transition-colors text-slate-700 hover:text-emerald-600"
+    >Funcionalidades</a>
+        <a
+      href="contato.html"
+      class="text-left text-lg font-medium py-3 border-b border-slate-100 transition-colors text-slate-700 hover:text-emerald-600"
+    >Contato</a>
+      </nav>
+</div>
+
+<main>
+  <!-- ===== FAQ HEADER + SEARCH SECTION ===== -->
+<section class="relative py-24 overflow-hidden" style="background:#0A1128;">
+  <div class="absolute top-0 right-0 w-96 h-96 rounded-full" style="background:rgba(16,185,129,0.05); filter:blur(80px);"></div>
+  <div class="absolute bottom-0 left-0 w-72 h-72 rounded-full" style="background:rgba(16,185,129,0.05); filter:blur(80px);"></div>
+
+  <div class="relative max-w-3xl mx-auto px-6 text-center">
+    <div data-aos="fade-up" data-aos-duration="600">
+      <span class="inline-block text-emerald-400 font-semibold text-sm tracking-widest uppercase mb-4">
+        Dúvidas frequentes
+      </span>
+      <h1 class="text-4xl lg:text-5xl font-extrabold text-white mb-4">
+        Central de Ajuda
+      </h1>
+      <p class="text-xl mb-10" style="color:rgba(255,255,255,0.55);">
+        Encontre respostas rápidas para as perguntas mais comuns sobre o uso do sistema RF1 Consig.
+      </p>
+    </div>
+
+    <!-- Search bar (visual, filtro via JS) -->
+    <div data-aos="fade-up" data-aos-duration="600" data-aos-delay="150">
+      <div class="relative">
+        <svg class="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5" style="color:rgba(255,255,255,0.35);" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input
+          id="faq-search"
+          type="text"
+          placeholder="Buscar pergunta..."
+          oninput="filterFaq(this.value)"
+          class="w-full h-14 pl-14 pr-6 rounded-2xl text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-base"
+          style="background:rgba(255,255,255,0.95);"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+function filterFaq(query) {
+  const q = query.toLowerCase().trim();
+  document.querySelectorAll('.faq-item').forEach(function(item) {
+    const text = item.textContent.toLowerCase();
+    item.style.display = (!q || text.includes(q)) ? '' : 'none';
+  });
+  document.querySelectorAll('.faq-tab-section').forEach(function(section) {
+    const visibleItems = Array.from(section.querySelectorAll('.faq-item')).filter(i => i.style.display !== 'none');
+    section.style.display = visibleItems.length > 0 ? '' : 'none';
+  });
+}
+</script>
+  <!-- ===== FAQ PROFILES / ACCORDION SECTION ===== -->
+<section class="relative py-20 bg-white">
+  <div class="max-w-4xl mx-auto px-6">
+
+    <!-- Profile tabs -->
+    <div data-aos="fade-up" data-aos-duration="600" class="flex flex-wrap gap-2 mb-10 justify-center">
+            <button
+        onclick="showFaqTab('servidor')"
+        id="tab-btn-servidor"
+        class="faq-tab-btn px-6 py-2.5 rounded-full font-medium text-sm transition-all duration-300 bg-emerald-600 text-white"
+      >Para o Servidor</button>
+            <button
+        onclick="showFaqTab('gestor')"
+        id="tab-btn-gestor"
+        class="faq-tab-btn px-6 py-2.5 rounded-full font-medium text-sm transition-all duration-300 bg-slate-100 text-slate-600 hover:bg-slate-200"
+      >Para o Gestor</button>
+            <button
+        onclick="showFaqTab('consignataria')"
+        id="tab-btn-consignataria"
+        class="faq-tab-btn px-6 py-2.5 rounded-full font-medium text-sm transition-all duration-300 bg-slate-100 text-slate-600 hover:bg-slate-200"
+      >Para a Consignatária</button>
+          </div>
+
+        <div id="faq-tab-servidor" class="faq-tab-section">
+      <div class="space-y-3">
+                <div class="faq-item rounded-2xl border border-slate-100 overflow-hidden transition-all duration-300" data-aos="fade-up" data-aos-delay="0">
+          <button
+            onclick="toggleFaq(this)"
+            class="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-slate-50 transition-colors"
+          >
+            <span class="font-semibold text-base pr-4" style="color:#0A1128;">Como consulto minha margem consignável disponível?</span>
+            <svg class="faq-chevron w-5 h-5 text-emerald-600 flex-shrink-0 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer hidden px-6 pb-5">
+            <p class="text-slate-600 leading-relaxed">Acesse o sistema com seu login e navegue até &quot;Consulta de Margem&quot;. Caso a consignante permita, você verá o valor disponível para novas consignações em tempo real.</p>
+          </div>
+        </div>
+                <div class="faq-item rounded-2xl border border-slate-100 overflow-hidden transition-all duration-300" data-aos="fade-up" data-aos-delay="60">
+          <button
+            onclick="toggleFaq(this)"
+            class="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-slate-50 transition-colors"
+          >
+            <span class="font-semibold text-base pr-4" style="color:#0A1128;">Como obtenho o extrato das minhas consignações em folha?</span>
+            <svg class="faq-chevron w-5 h-5 text-emerald-600 flex-shrink-0 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer hidden px-6 pb-5">
+            <p class="text-slate-600 leading-relaxed">Na área do servidor, acesse &quot;Extrato de Consignações&quot;. Você pode filtrar por período e baixar o documento em PDF para comprovação.</p>
+          </div>
+        </div>
+                <div class="faq-item rounded-2xl border border-slate-100 overflow-hidden transition-all duration-300" data-aos="fade-up" data-aos-delay="120">
+          <button
+            onclick="toggleFaq(this)"
+            class="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-slate-50 transition-colors"
+          >
+            <span class="font-semibold text-base pr-4" style="color:#0A1128;">O que faço se identificar uma consignação indevida?</span>
+            <svg class="faq-chevron w-5 h-5 text-emerald-600 flex-shrink-0 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer hidden px-6 pb-5">
+            <p class="text-slate-600 leading-relaxed">Entre em contato com o setor de RH do seu órgão ou diretamente pelo nosso suporte. Fornecemos relatórios detalhados para embasar a solicitação de suspensão ou cancelamento.</p>
+          </div>
+        </div>
+                <div class="faq-item rounded-2xl border border-slate-100 overflow-hidden transition-all duration-300" data-aos="fade-up" data-aos-delay="180">
+          <button
+            onclick="toggleFaq(this)"
+            class="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-slate-50 transition-colors"
+          >
+            <span class="font-semibold text-base pr-4" style="color:#0A1128;">Posso solicitar a suspensão de uma consignação pelo sistema?</span>
+            <svg class="faq-chevron w-5 h-5 text-emerald-600 flex-shrink-0 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer hidden px-6 pb-5">
+            <p class="text-slate-600 leading-relaxed">A suspensão de consignações é realizada pelo setor de RH do órgão ou pela instituição consignatária, conforme as regras do seu órgão. Consulte o canal de atendimento disponível.</p>
+          </div>
+        </div>
+                <div class="faq-item rounded-2xl border border-slate-100 overflow-hidden transition-all duration-300" data-aos="fade-up" data-aos-delay="240">
+          <button
+            onclick="toggleFaq(this)"
+            class="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-slate-50 transition-colors"
+          >
+            <span class="font-semibold text-base pr-4" style="color:#0A1128;">Quanto tempo leva para uma consignação aparecer no meu extrato?</span>
+            <svg class="faq-chevron w-5 h-5 text-emerald-600 flex-shrink-0 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer hidden px-6 pb-5">
+            <p class="text-slate-600 leading-relaxed">Após a averbação confirmada pela consignatária, a consignação é refletida no sistema em tempo real. O desconto efetivo ocorre no próximo processamento da folha.</p>
+          </div>
+        </div>
+              </div>
+    </div>
+        <div id="faq-tab-gestor" class="faq-tab-section hidden">
+      <div class="space-y-3">
+                <div class="faq-item rounded-2xl border border-slate-100 overflow-hidden transition-all duration-300" data-aos="fade-up" data-aos-delay="0">
+          <button
+            onclick="toggleFaq(this)"
+            class="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-slate-50 transition-colors"
+          >
+            <span class="font-semibold text-base pr-4" style="color:#0A1128;">Como exporto o relatório de processamento mensal?</span>
+            <svg class="faq-chevron w-5 h-5 text-emerald-600 flex-shrink-0 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer hidden px-6 pb-5">
+            <p class="text-slate-600 leading-relaxed">Acesse o menu &quot;Relatórios &gt; Processamento Mensal&quot;, selecione o período desejado e clique em &quot;Exportar&quot;. Disponível nos formatos PDF e planilha.</p>
+          </div>
+        </div>
+                <div class="faq-item rounded-2xl border border-slate-100 overflow-hidden transition-all duration-300" data-aos="fade-up" data-aos-delay="60">
+          <button
+            onclick="toggleFaq(this)"
+            class="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-slate-50 transition-colors"
+          >
+            <span class="font-semibold text-base pr-4" style="color:#0A1128;">Como identifico contratos que não foram descontados na folha?</span>
+            <svg class="faq-chevron w-5 h-5 text-emerald-600 flex-shrink-0 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer hidden px-6 pb-5">
+            <p class="text-slate-600 leading-relaxed">O relatório &quot;Contratos Não Descontados&quot; lista todos os contratos que não passaram pelo desconto no processamento selecionado, com o motivo de cada ocorrência.</p>
+          </div>
+        </div>
+                <div class="faq-item rounded-2xl border border-slate-100 overflow-hidden transition-all duration-300" data-aos="fade-up" data-aos-delay="120">
+          <button
+            onclick="toggleFaq(this)"
+            class="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-slate-50 transition-colors"
+          >
+            <span class="font-semibold text-base pr-4" style="color:#0A1128;">É possível configurar limites de margem por grupo de servidores?</span>
+            <svg class="faq-chevron w-5 h-5 text-emerald-600 flex-shrink-0 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer hidden px-6 pb-5">
+            <p class="text-slate-600 leading-relaxed">Sim. Na parametrização do sistema, você pode definir percentuais máximos de margem por grupo, subgrupo e tipo de produto/serviço conforme as normas do órgão.</p>
+          </div>
+        </div>
+                <div class="faq-item rounded-2xl border border-slate-100 overflow-hidden transition-all duration-300" data-aos="fade-up" data-aos-delay="180">
+          <button
+            onclick="toggleFaq(this)"
+            class="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-slate-50 transition-colors"
+          >
+            <span class="font-semibold text-base pr-4" style="color:#0A1128;">Como audito as operações realizadas pelas consignatárias?</span>
+            <svg class="faq-chevron w-5 h-5 text-emerald-600 flex-shrink-0 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer hidden px-6 pb-5">
+            <p class="text-slate-600 leading-relaxed">O módulo de Auditoria registra todas as ações com data, hora, usuário e IP. Você pode filtrar por consignatária, tipo de operação e período para análises detalhadas.</p>
+          </div>
+        </div>
+                <div class="faq-item rounded-2xl border border-slate-100 overflow-hidden transition-all duration-300" data-aos="fade-up" data-aos-delay="240">
+          <button
+            onclick="toggleFaq(this)"
+            class="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-slate-50 transition-colors"
+          >
+            <span class="font-semibold text-base pr-4" style="color:#0A1128;">Como exporto dados para atendimento de demandas judiciais?</span>
+            <svg class="faq-chevron w-5 h-5 text-emerald-600 flex-shrink-0 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer hidden px-6 pb-5">
+            <p class="text-slate-600 leading-relaxed">O sistema permite extração de histórico completo por servidor, com todos os contratos, alterações e cancelamentos, facilitando a resposta a ofícios e demandas judiciais.</p>
+          </div>
+        </div>
+              </div>
+    </div>
+        <div id="faq-tab-consignataria" class="faq-tab-section hidden">
+      <div class="space-y-3">
+                <div class="faq-item rounded-2xl border border-slate-100 overflow-hidden transition-all duration-300" data-aos="fade-up" data-aos-delay="0">
+          <button
+            onclick="toggleFaq(this)"
+            class="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-slate-50 transition-colors"
+          >
+            <span class="font-semibold text-base pr-4" style="color:#0A1128;">Como averbar um novo contrato de consignação?</span>
+            <svg class="faq-chevron w-5 h-5 text-emerald-600 flex-shrink-0 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer hidden px-6 pb-5">
+            <p class="text-slate-600 leading-relaxed">Acesse &quot;Nova Consignação&quot;, informe os dados do servidor e do contrato. O sistema verificará a margem disponível em tempo real e confirmará ou recusará a averbação instantaneamente.</p>
+          </div>
+        </div>
+                <div class="faq-item rounded-2xl border border-slate-100 overflow-hidden transition-all duration-300" data-aos="fade-up" data-aos-delay="60">
+          <button
+            onclick="toggleFaq(this)"
+            class="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-slate-50 transition-colors"
+          >
+            <span class="font-semibold text-base pr-4" style="color:#0A1128;">Como acompanho o status das minhas averbações?</span>
+            <svg class="faq-chevron w-5 h-5 text-emerald-600 flex-shrink-0 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer hidden px-6 pb-5">
+            <p class="text-slate-600 leading-relaxed">No painel da consignatária, a aba &quot;Contratos&quot; exibe o status de cada averbação: pendente, confirmada, processada em folha ou não descontada.</p>
+          </div>
+        </div>
+                <div class="faq-item rounded-2xl border border-slate-100 overflow-hidden transition-all duration-300" data-aos="fade-up" data-aos-delay="120">
+          <button
+            onclick="toggleFaq(this)"
+            class="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-slate-50 transition-colors"
+          >
+            <span class="font-semibold text-base pr-4" style="color:#0A1128;">O que acontece com contratos não descontados na folha?</span>
+            <svg class="faq-chevron w-5 h-5 text-emerald-600 flex-shrink-0 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer hidden px-6 pb-5">
+            <p class="text-slate-600 leading-relaxed">O sistema oferece a reimplantação automática, que retorna os contratos não descontados para processamento no próximo ciclo, com opção de preservar ou cancelar a parcela não descontada.</p>
+          </div>
+        </div>
+                <div class="faq-item rounded-2xl border border-slate-100 overflow-hidden transition-all duration-300" data-aos="fade-up" data-aos-delay="180">
+          <button
+            onclick="toggleFaq(this)"
+            class="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-slate-50 transition-colors"
+          >
+            <span class="font-semibold text-base pr-4" style="color:#0A1128;">Como realizo a renegociação de contratos?</span>
+            <svg class="faq-chevron w-5 h-5 text-emerald-600 flex-shrink-0 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer hidden px-6 pb-5">
+            <p class="text-slate-600 leading-relaxed">Acesse &quot;Renegociação&quot; e selecione o contrato. Em uma única tela, você realiza a liquidação do contrato antigo e a inserção do novo, sem precisar executar duas operações separadas.</p>
+          </div>
+        </div>
+                <div class="faq-item rounded-2xl border border-slate-100 overflow-hidden transition-all duration-300" data-aos="fade-up" data-aos-delay="240">
+          <button
+            onclick="toggleFaq(this)"
+            class="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-slate-50 transition-colors"
+          >
+            <span class="font-semibold text-base pr-4" style="color:#0A1128;">Posso importar contratos em lote?</span>
+            <svg class="faq-chevron w-5 h-5 text-emerald-600 flex-shrink-0 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer hidden px-6 pb-5">
+            <p class="text-slate-600 leading-relaxed">Sim. O módulo de Importação aceita arquivos de lote no formato padrão, permitindo inclusão, alteração ou exclusão de múltiplos contratos de uma só vez.</p>
+          </div>
+        </div>
+              </div>
+    </div>
+    
+  </div>
+</section>
+
+<script>
+function showFaqTab(id) {
+  document.querySelectorAll('.faq-tab-section').forEach(function(s) { s.classList.add('hidden'); });
+  document.querySelectorAll('.faq-tab-btn').forEach(function(b) {
+    b.classList.remove('bg-emerald-600', 'text-white');
+    b.classList.add('bg-slate-100', 'text-slate-600');
+  });
+  document.getElementById('faq-tab-' + id).classList.remove('hidden');
+  var btn = document.getElementById('tab-btn-' + id);
+  btn.classList.add('bg-emerald-600', 'text-white');
+  btn.classList.remove('bg-slate-100', 'text-slate-600');
+}
+
+function toggleFaq(btn) {
+  var answer = btn.nextElementSibling;
+  var chevron = btn.querySelector('.faq-chevron');
+  var isOpen = !answer.classList.contains('hidden');
+  answer.classList.toggle('hidden', isOpen);
+  chevron.style.transform = isOpen ? '' : 'rotate(180deg)';
+}
+</script>
+  <!-- ===== FAQ SUPPORT CTA SECTION ===== -->
+<section class="relative py-20 overflow-hidden" style="background:#F8FAFC;">
+  <div class="max-w-3xl mx-auto px-6 text-center">
+    <div data-aos="fade-up" data-aos-duration="600">
+      <div class="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6">
+        <svg class="w-8 h-8 text-emerald-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      </div>
+      <h2 class="text-3xl font-extrabold mb-3" style="color:#0A1128;">Não encontrou sua resposta?</h2>
+      <p class="text-lg text-slate-500 mb-8">Nossa equipe de suporte está pronta para te ajudar pelo canal que for mais conveniente.</p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a
+          href="contato.html"
+          class="px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-full transition-all duration-300 flex items-center gap-2"
+        >
+          <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Enviar mensagem
+        </a>
+        <a
+          href="https://wa.me/5591986192525"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="px-8 py-4 font-semibold rounded-full transition-all duration-300 flex items-center gap-2 hover:text-white"
+          style="border: 2px solid #0A1128; color:#0A1128;"
+          onmouseover="this.style.background='#0A1128';"
+          onmouseout="this.style.background='transparent'; this.style.color='#0A1128';"
+        >
+          <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="relative overflow-hidden" style="background:#0A1128;">
+  <!-- Watermark logo -->
+  <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+    <img
+      src="https://rf1consig.com.br/wp-content/uploads/2024/05/Logo-RF1-Consig-Horizontal.png"
+      alt=""
+      class="w-[600px] brightness-0 invert"
+      style="opacity:0.03;"
+    />
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-6 pt-20 pb-10">
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
+
+      <!-- Brand -->
+      <div class="lg:col-span-1">
+        <img
+          src="https://rf1consig.com.br/wp-content/uploads/2024/05/Logo-RF1-Consig-Horizontal.png"
+          alt="RF1 Consig"
+          class="h-10 brightness-0 invert mb-6"
+        />
+        <p class="leading-relaxed text-sm mb-6" style="color:rgba(255,255,255,0.50);">
+          Fundada por profissionais com experiência no mercado financeiro, a RF1 Consig é especializada na gestão de margens consignáveis para órgãos públicos e empresas privadas.
+        </p>
+        <!-- Social icons -->
+        <div class="flex items-center gap-3">
+          <a href="#INSTAGRAM_URL" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+             class="w-9 h-9 rounded-full flex items-center justify-center transition-colors hover:bg-emerald-600"
+             style="background:rgba(255,255,255,0.08);">
+            <svg class="w-4 h-4 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#FACEBOOK_URL" target="_blank" rel="noopener noreferrer" aria-label="Facebook"
+             class="w-9 h-9 rounded-full flex items-center justify-center transition-colors hover:bg-emerald-600"
+             style="background:rgba(255,255,255,0.08);">
+            <svg class="w-4 h-4 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick links -->
+      <div>
+        <h4 class="text-white font-bold text-sm uppercase tracking-widest mb-6">Navegação</h4>
+        <ul class="space-y-3">
+          <li><a href="index.html"          class="text-sm transition-colors hover:text-emerald-400" style="color:rgba(255,255,255,0.50);">Home</a></li>
+          <li><a href="quem-somos.html"     class="text-sm transition-colors hover:text-emerald-400" style="color:rgba(255,255,255,0.50);">Quem Somos</a></li>
+          <li><a href="solucoes.html"       class="text-sm transition-colors hover:text-emerald-400" style="color:rgba(255,255,255,0.50);">Soluções</a></li>
+          <li><a href="faq.html"            class="text-sm transition-colors hover:text-emerald-400" style="color:rgba(255,255,255,0.50);">FAQ</a></li>
+          <li><a href="principios.html"     class="text-sm transition-colors hover:text-emerald-400" style="color:rgba(255,255,255,0.50);">Princípios</a></li>
+          <li><a href="funcionalidades.html"class="text-sm transition-colors hover:text-emerald-400" style="color:rgba(255,255,255,0.50);">Funcionalidades</a></li>
+          <li><a href="contato.html"        class="text-sm transition-colors hover:text-emerald-400" style="color:rgba(255,255,255,0.50);">Contato</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h4 class="text-white font-bold text-sm uppercase tracking-widest mb-6">Contato</h4>
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12 19.79 19.79 0 0 1 1.08 3.4A2 2 0 0 1 3.06 1.2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <div>
+              <p class="text-sm" style="color:rgba(255,255,255,0.50);">0800 5149 334 (gratuito)</p>
+              <p class="text-sm" style="color:rgba(255,255,255,0.50);">(91) 3122-2238</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <a href="https://wa.me/5591986192525" target="_blank" rel="noopener noreferrer" class="text-sm transition-colors hover:text-emerald-400" style="color:rgba(255,255,255,0.50);">(91) 98619-2525</a>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:suporte@rf1consig.com.br" class="text-sm transition-colors hover:text-emerald-400" style="color:rgba(255,255,255,0.50);">suporte@rf1consig.com.br</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Address -->
+      <div>
+        <h4 class="text-white font-bold text-sm uppercase tracking-widest mb-6">Endereço</h4>
+        <div class="flex items-start gap-3 mb-6">
+          <svg class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <p class="text-sm leading-relaxed" style="color:rgba(255,255,255,0.50);">
+            Tv. Quintino Bocaiúva, 2301 - Sala 901<br />
+            Edif. Rogélio Fernandez Business Center<br />
+            Cremação, CEP 66.045-315<br />
+            Belém/PA
+          </p>
+        </div>
+        <!-- CNPJ -->
+        <p class="text-xs" style="color:rgba(255,255,255,0.30);">
+          CNPJ: #CNPJ_PLACEHOLDER
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Divider + copyright -->
+    <div class="pt-8" style="border-top: 1px solid rgba(255,255,255,0.10);">
+      <p class="text-center text-sm" style="color:rgba(255,255,255,0.30);">
+        Copyright &copy; 2026 - RF1 Consig. Todos direitos reservados.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
