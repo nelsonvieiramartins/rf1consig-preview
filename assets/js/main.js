@@ -2,20 +2,24 @@
 
 // ===== Navbar scroll behavior =====
 (function () {
-  const wrapper = document.getElementById('navbar-wrapper');
-  const navBg   = document.getElementById('navbar-bg');
-  const infoBar = document.getElementById('info-bar');
-  const logo    = document.getElementById('navbar-logo');
-  const toggle  = document.getElementById('mobile-toggle');
-  const hasHero = wrapper && wrapper.dataset.hasHero === 'true';
+  const wrapper    = document.getElementById('navbar-wrapper');
+  const navBg      = document.getElementById('navbar-bg');
+  const infoBar    = document.getElementById('info-bar');
+  const infoPhone  = document.getElementById('info-phone');
+  const infoEmail  = document.getElementById('info-email');
+  const logo       = document.getElementById('navbar-logo');
+  const toggle     = document.getElementById('mobile-toggle');
+  const hasHero    = wrapper && wrapper.dataset.hasHero === 'true';
 
   function onScroll() {
     const scrolled = !hasHero || window.scrollY > 60;
 
     if (scrolled) {
       navBg.classList.add('scrolled');
-      infoBar.style.maxHeight = '0';
-      infoBar.style.opacity   = '0';
+      infoBar.style.maxHeight = '48px';
+      infoBar.style.opacity   = '1';
+      if (infoPhone) infoPhone.style.color = '#475569';
+      if (infoEmail) infoEmail.style.color = '#475569';
       logo.style.height       = '40px';
       logo.classList.remove('brightness-0', 'invert');
       toggle.style.color      = '#1e293b';
@@ -23,6 +27,8 @@
       navBg.classList.remove('scrolled');
       infoBar.style.maxHeight = '48px';
       infoBar.style.opacity   = '1';
+      if (infoPhone) infoPhone.style.color = 'rgba(255,255,255,0.80)';
+      if (infoEmail) infoEmail.style.color = 'rgba(255,255,255,0.80)';
       logo.style.height       = '48px';
       logo.classList.add('brightness-0', 'invert');
       toggle.style.color      = '#fff';

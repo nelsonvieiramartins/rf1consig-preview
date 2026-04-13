@@ -47,15 +47,15 @@
 <div id="navbar-wrapper" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500" data-has-hero="false">
   <div id="navbar-bg" class="transition-all duration-500 scrolled">
 
-    <!-- Info bar (telefone / email) — visível apenas com hero -->
-    <div id="info-bar" class="transition-all duration-500 overflow-hidden max-h-0 opacity-0">
+    <!-- Info bar (telefone / email) — sempre visível, adapta cor ao rolar -->
+    <div id="info-bar" class="transition-all duration-500 overflow-hidden max-h-12 opacity-100">
       <div class="max-w-7xl mx-auto px-6 py-2 flex justify-between items-center">
         <div class="flex items-center gap-6 text-sm">
-          <a href="tel:+5591986192525" class="flex items-center gap-2 text-white/80 hover:text-white transition-colors">
+          <a id="info-phone" href="tel:08005149334" class="flex items-center gap-2 transition-colors text-slate-600 hover:text-slate-900">
             <svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12 19.79 19.79 0 0 1 1.08 3.4A2 2 0 0 1 3.06 1.2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            <span>+55 (91) 98619-2525</span>
+            <span>0800 5149 334</span>
           </a>
-          <a href="mailto:suporte@rf1consig.com.br" class="hidden sm:flex items-center gap-2 text-white/80 hover:text-white transition-colors">
+          <a id="info-email" href="mailto:suporte@rf1consig.com.br" class="hidden sm:flex items-center gap-2 transition-colors text-slate-600 hover:text-slate-900">
             <svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             <span>suporte@rf1consig.com.br</span>
           </a>
